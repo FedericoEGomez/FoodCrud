@@ -15,8 +15,6 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
                   $ref: '#/components/schemas/responseListFood'
   /api/crear:
     post: 
@@ -34,8 +32,6 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
                   $ref: '#/components/schemas/responseFood'
 components:
   schemas:
@@ -54,14 +50,19 @@ components:
       properties:
         _id: 
           type: string
+          example: 641a029a579f12da26c35882
         nombre: 
           type: string
+          example: "ejemplo"
         precio:
           type: number
+          example: 1550
         descripcion:
           type: string
+          example: "Esto es un ejemplo de descipcion"
         __v:
-          type: string
+          type: number
+          example: 0
     responseListFood:
       properties:
         item: 
