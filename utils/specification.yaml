@@ -1,0 +1,77 @@
+openapi: 3.0.1
+info:
+  title: FoodCurd Numen
+  description: Esto es un ejemplo de como documentar Apis 
+  version: 1.0.0
+paths:
+  /api/ver:
+    get:
+      tags:
+        - api ver listado
+      description: Esta ruta trae el listado de todo los productos
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/responseListFood'
+  /api/crear:
+    post: 
+      tags:
+        - api crear 
+      description: Esta ruta crea un item de comida en la base de datos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/postFood"
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/responseFood'
+components:
+  schemas:
+    postFood:
+      properties:
+        nombre:
+          type: string
+          example: "ejemplo"
+        precio:
+          type: number
+          example: 1500
+        descripcion:
+          type: string
+          example: "Esto es un ejemplo de descipcion"
+    responseFood:
+      properties:
+        _id: 
+          type: string
+        nombre: 
+          type: string
+        precio:
+          type: number
+        descripcion:
+          type: string
+        __v:
+          type: string
+    responseListFood:
+      properties:
+        item: 
+          items:
+            $ref: '#/components/schemas/responseFood'
+  parameters:
+    id:
+      name: type
+      in: path
+      description: Id del item en cuuestion
+      required: true
+      schema:
+        type: string
