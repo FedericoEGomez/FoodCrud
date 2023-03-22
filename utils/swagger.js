@@ -7,8 +7,14 @@ const options = {
         info: {
             title: "FoodCrud JS",
             version: "1.0.0"
-        }
+        },
+        servers: [
+            {
+                url: '/api'
+            },
+        ],
     },
+    
     apis: ["utils/specification.yaml"]
 } 
 

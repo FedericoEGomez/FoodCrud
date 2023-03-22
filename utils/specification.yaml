@@ -4,7 +4,7 @@ info:
   description: Esto es un ejemplo de como documentar Apis 
   version: 1.0.0
 paths:
-  /api/ver:
+  /ver:
     get:
       tags:
         - api ver listado
@@ -16,7 +16,7 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseListFood'
-  /api/crear:
+  /crear:
     post: 
       tags:
         - api crear 
