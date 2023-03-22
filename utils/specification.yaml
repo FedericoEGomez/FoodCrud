@@ -65,7 +65,7 @@ components:
           example: 0
     responseListFood:
       properties:
-        item: 
+        foods: 
           items:
             $ref: '#/components/schemas/responseFood'
   parameters:

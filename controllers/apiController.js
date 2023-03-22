@@ -3,9 +3,9 @@ const {validationResult} = require("express-validator")
 
 module.exports = {
     async verComida (req, res) {
-        const items = await Foods.find()//nos trae todo
-        console.log(items)
-        res.status(200).json({items})
+        const foods = await Foods.find()//nos trae todo
+        console.log(foods)
+        res.status(200).json({foods})
     },
     async guardarComida(req, res){
         try {
