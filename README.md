@@ -10,24 +10,24 @@ levantar servidor:
     npm run start - iniciar con node
 
 folders:
-.    src
-.        |__
-.        controllers
+......src
+.........|__
+.........controllers
 .            |__apiController.js
 .            |__indexController.js
-.        db
+.........db
 .            |__db.js
-.        middleware
+.........middleware
 .            |__validarID.js
-.        models
+.........models
 .            |__foods.js
-.        routers
+.........routers
 .            |__api.js
 .            |__index.js
-.        utils
+.........utils
 .            |__specification.yaml
 .            |__swagger.js
-.    app.js
-.    package.json
-.    server.js
+.....app.js
+.....package.json
+.....server.js
     
