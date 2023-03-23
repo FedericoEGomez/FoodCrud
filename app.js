@@ -17,7 +17,7 @@ app.use(cors())
 
 //http://localhost:3000/api
 app.use('/', indexRouter)
-app.use('/api',apiRouter)
+app.use('/api/v1',apiRouter)
 
 connect()
 

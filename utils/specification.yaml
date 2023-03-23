@@ -27,12 +27,37 @@ paths:
             schema:
               $ref: "#/components/schemas/postFood"
       responses:
-        200:
+        201:
           description: OK
           content:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseFood'
+  /editar/{id}:
+    put: 
+      tags:
+        - api editar  
+      description: Esta ruta crea un item de comida en la base de datos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/postFood"
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        201:
+          description: OK
+  /eliminar/{id}:
+    delete: 
+      tags:
+        - api eliminar 
+      description: Esta ruta crea un item de comida en la base de datos
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        200:
+          description: OK
 components:
   schemas:
     postFood:
@@ -70,7 +95,7 @@ components:
             $ref: '#/components/schemas/responseFood'
   parameters:
     id:
-      name: type
+      name: id
       in: path
       description: Id del item en cuuestion
       required: true
