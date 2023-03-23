@@ -48,6 +48,10 @@ paths:
       responses:
         201:
           description: OK
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/responseFood'
   /eliminar/{id}:
     delete: 
       tags:
@@ -58,6 +62,10 @@ paths:
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/delereteFoodResponse'
 components:
   schemas:
     postFood:
@@ -88,6 +96,13 @@ components:
         __v:
           type: number
           example: 0
+    delereteFoodResponse: 
+      properties:
+        msg:
+          type: string
+          example: "objeto borrado ejemplo"
+        food:
+          $ref: '#/components/schemas/responseFood'
     responseListFood:
       properties:
         foods: 

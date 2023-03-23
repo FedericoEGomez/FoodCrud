@@ -11,10 +11,10 @@ module.exports = {
         try {
             const err = validationResult(req)
             if (err.isEmpty()) {
-                const item = new Foods(req.body)
-                await item.save()
-                console.log(item)
-                res.status(201).json({item})
+                const foods = new Foods(req.body)
+                await foods.save()
+                console.log(foods)
+                res.status(201).json({foods})
             } else {
                 console.log(err)
                 res.status(501).json(err)
@@ -41,8 +41,8 @@ module.exports = {
         }
     },
     async eliminarComida(req, res){
-        const seleccion = await Foods.findByIdAndDelete(req.params.id)
-        console.log({msg: "adios comida", seleccion})
-        res.status(200).json({msg: "adios comida", seleccion})
+        const foods = await Foods.findByIdAndDelete(req.params.id)
+        console.log({msg: "adios comida", foods})
+        res.status(200).json({msg: "adios comida", foods})
     }
 }
