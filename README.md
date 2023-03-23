@@ -5,7 +5,9 @@ En este repositorio tendremos ejemplos del uso de middlewares, CRUD, rutas versi
 intalacion: 
 --npm i
 
-levantar servidor: 
---npm run dev - iniciar con nodemon
---npm run start - iniciar con node
-    
+
+_________________________________________________
+|levantar servidor: ----------------------------|
+|--npm run dev - iniciar con nodemon------------|
+|--npm run start - iniciar con node-------------|
+|_______________________________________________|   
