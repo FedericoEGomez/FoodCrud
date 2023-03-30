@@ -17,8 +17,6 @@ const options = {
     
     apis: ["src/utils/specification.yaml"]
 } 
-
 const swaggerSpec = swaggerJsDoc(options);
-
 
 module.exports = (path, app) => app.use(path, swaggerUiExpress.serve, swaggerUiExpress.setup(swaggerSpec));

@@ -4,7 +4,7 @@ const apiController = require("../controllers/apiController")
 const { validarID } = require("../middleware/validarID")
 const {check} = require("express-validator")
 
-router.get("/ver",apiController.verComida)
+router.get("/ver",apiController.verComidas)
 router.post("/crear",[
     check("nombre").not().isEmpty().withMessage("el campo nombre es obligatorio").isLength({max:25,min:3}).withMessage("el campo nombre debe contar con un maximo de 25 caracteres y un minimo de 3"),
     check("precio").not().isEmpty().withMessage("el campo precio es obligatorio"),

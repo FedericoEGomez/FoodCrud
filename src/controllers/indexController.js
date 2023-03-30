@@ -1,5 +1,5 @@
 const index = (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello World!');
 }
 
-module.exports = {index}
+module.exports = {index};
