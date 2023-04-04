@@ -1,5 +1,4 @@
 const {Foods} = require("../models/foods");
-const {validationResult} = require("express-validator");
 
 module.exports = {
 
