@@ -21,29 +21,34 @@ module.exports = {
         res.status(200).json({foods});
     },
 
-    async guardarComida(req, res){
+    async guardarComida(req, res) {
         try {
-            const err = validationResult(req);
-            if (err.isEmpty()) {
-                const foods = new Foods(req.body);
-                await foods.save();
-                console.log(foods);
-                res.status(201).json({foods});
-            } else {
-                console.log(err);
-                res.status(501).json(err);
-            }
+            const foods = new Foods(req.body);
+            await foods.save();
+            console.log(foods);
+            res.status(201).json({foods});
         } catch (error) {
             console.log(error);
             res.status(501).json(error);
         } 
     },
 
-    async editarLaComida (req, res){
+    async editarLaComida (req, res) {
+        try {
+            await Foods.findByIdAndUpdate(req.params.id,req.body);
+            console.log("comida editada");
+            res.status(201).json(req.body);
+        } catch (error) {
+            console.log(error);
+            res.status(501).json(error);
+        }
+    },
+
+    async editarLaComidaPorTipo (req, res) {
         try {
             const err = validationResult(req);
             if (err.isEmpty()) {
-                await Foods.findByIdAndUpdate(req.params.id,req.body);
+                await Foods.findOneAndUpdate({tipo: req.params.tipo},req.body);
                 console.log("comida editada");
                 res.status(201).json(req.body);
             } else {
@@ -56,9 +61,15 @@ module.exports = {
         }
     },
 
-    async eliminarComida(req, res){
+    async eliminarComida (req, res) {
         const foods = await Foods.findByIdAndDelete(req.params.id);
         console.log({msg: "adios comida", foods});
         res.status(200).json({msg: "adios comida", foods});
-    }
+    },
+
+    async eliminarComidaPorTipo (req, res) {
+        const foods = await Foods.findOneAndDelete({tipo: req.params.tipo});
+        console.log({msg: "adios comida", foods});
+        res.status(200).json({msg: "adios comida", foods});
+    },
 }
