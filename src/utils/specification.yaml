@@ -50,8 +50,8 @@ paths:
         - api ver 
       description: Esta ruta trae el listado de todo los productos
       parameters:
-        - $ref: '#/components/parameters/tipoQuery'
         - $ref: '#/components/parameters/nombreQuery'
+        - $ref: '#/components/parameters/tipoQuery'
         - $ref: '#/components/parameters/precioQuery'
       responses:
         200:
