@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require("cors");
 const logger = require("morgan");
-const swagger = require("./src/utils/swagger");
+const swagger = require("./utils/swagger");
 
 const app = express();
 
-const indexRouter = require("./src/routers/index");
-const apiRouter = require("./src/routers/api");
-const {connect} = require("./src/db/db");
+const indexRouter = require("./routers/index");
+const apiRouter = require("./routers/api");
+const {connect} = require("./db/db");
 
 swagger('/swagger', app);
 app.use(logger("dev"));

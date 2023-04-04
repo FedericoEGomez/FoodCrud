@@ -4,8 +4,8 @@
   "description": "Esto es un ejemplo de un servidor con express para los chicos",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "author": "Numen",
   "license": "ISC",
