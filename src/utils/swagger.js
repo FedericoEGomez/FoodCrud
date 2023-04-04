@@ -3,10 +3,10 @@ const swaggerUiExpress = require('swagger-ui-express');
 
 const options = {
     definition : {
-        openapi : "3.0.1",
+        openapi : '3.0.1',
         info: {
-            title: "FoodCrud JS",
-            version: "1.0.0"
+            title: 'FoodCrud JS',
+            version: '1.0.0'
         },
         servers: [
             {
@@ -15,7 +15,7 @@ const options = {
         ],
     },
     
-    apis: ["src/utils/specification.yaml"]
+    apis: ['src/utils/specification.yaml']
 } 
 const swaggerSpec = swaggerJsDoc(options);
 

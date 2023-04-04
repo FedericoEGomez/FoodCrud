@@ -16,6 +16,34 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseListFood'
+  /ver/{id}:
+    get:
+      tags:
+        - api ver listado
+      description: Esta ruta trae el listado de todo los productos
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/responseListFood'
+  /buscar/{tipo}:
+    get:
+      tags:
+        - api ver listado
+      description: Esta ruta trae el listado de todo los productos
+      parameters:
+        - $ref: '#/components/parameters/tipo'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/responseListFood'
   /crear:
     post: 
       tags:
@@ -33,6 +61,7 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseFood'
+  
   /editar/{id}:
     put: 
       tags:
@@ -45,6 +74,25 @@ paths:
               $ref: "#/components/schemas/postFood"
       parameters:
         - $ref: '#/components/parameters/id'
+      responses:
+        201:
+          description: OK
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/responseFood'
+  /editartipo/{tipo}:
+    put: 
+      tags:
+        - api editar  
+      description: Esta ruta crea un item de comida en la base de datos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/postFood"
+      parameters:
+        - $ref: '#/components/parameters/tipo'
       responses:
         201:
           description: OK
@@ -66,11 +114,28 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/delereteFoodResponse'
+  /eliminartipo/{tipo}:
+    delete: 
+      tags:
+        - api eliminar 
+      description: Esta ruta crea un item de comida en la base de datos
+      parameters:
+        - $ref: '#/components/parameters/tipo'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/delereteFoodResponse'
 components:
   schemas:
     postFood:
       properties:
         nombre:
+          type: string
+          example: "ejemplo"
+        tipo: 
           type: string
           example: "ejemplo"
         precio:
@@ -85,6 +150,9 @@ components:
           type: string
           example: 641a029a579f12da26c35882
         nombre: 
+          type: string
+          example: "ejemplo"
+        tipo: 
           type: string
           example: "ejemplo"
         precio:
@@ -113,6 +181,13 @@ components:
       name: id
       in: path
       description: Id del item en cuuestion
+      required: true
+      schema:
+        type: string
+    tipo:
+      name: tipo
+      in: path
+      description: Tipo del item en cuuestion
       required: true
       schema:
         type: string

@@ -45,16 +45,10 @@ module.exports = {
     },
 
     async editarLaComidaPorTipo (req, res) {
-        try {
-            const err = validationResult(req);
-            if (err.isEmpty()) {
-                await Foods.findOneAndUpdate({tipo: req.params.tipo},req.body);
-                console.log("comida editada");
-                res.status(201).json(req.body);
-            } else {
-               console.log(err) 
-               res.status(501).json(err);
-            }  
+        try { 
+            await Foods.findOneAndUpdate({tipo: req.params.tipo},req.body);
+            console.log("comida editada");
+            res.status(201).json(req.body);
         } catch (error) {
             console.log(error);
             res.status(501).json(error);
