@@ -5,7 +5,7 @@ const validarTipo = async (req, res, next) =>{
         if (food !== null) {
             next()
         } else {
-           res.status(500).json({msg: "el tipo es invalido"}) 
+           res.status(400).json({msg: "el tipo es invalido"}) 
         }
     } catch (error) {
         console.log("entre")

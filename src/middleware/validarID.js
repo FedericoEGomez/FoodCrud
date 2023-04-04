@@ -5,7 +5,7 @@ const validarID = async (req, res, next) =>{
         if (food !== null) {
             next()
         } else {
-           res.status(500).json({msg: "el id es invalido"}) 
+           res.status(400).json({msg: "el id es invalido"}) 
         }
     } catch (error) {
         res.status(500).json(error)

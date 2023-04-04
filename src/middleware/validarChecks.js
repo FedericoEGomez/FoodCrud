@@ -6,7 +6,7 @@ const validarCheck = (req, res, next) =>{
         next();
     } else {
        console.log(err) 
-       res.status(501).json(err);
+       res.status(400).json(err);
     }  
 }
 

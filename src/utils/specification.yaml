@@ -30,6 +30,12 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseListFood'
+        400:
+         description: bad request
+         content:
+           application/json:
+              schema:
+                  $ref: '#/components/schemas/badRequestInvalidId'
   /buscar/{tipo}:
     get:
       tags:
@@ -44,6 +50,12 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseListFood'
+        400:
+         description: bad request
+         content:
+           application/json:
+              schema:
+                  $ref: '#/components/schemas/badRequestInvalidType'
   /buscador:
     get:
       tags:
@@ -97,6 +109,12 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseFood'
+        400:
+         description: bad request
+         content:
+           application/json:
+              schema:
+                  $ref: '#/components/schemas/badRequestInvalidId'
   /editartipo/{tipo}:
     put: 
       tags:
@@ -116,6 +134,12 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseFood'
+        400:
+         description: bad request
+         content:
+           application/json:
+              schema:
+                  $ref: '#/components/schemas/badRequestInvalidType'
   /eliminar/{id}:
     delete: 
       tags:
@@ -130,6 +154,12 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/delereteFoodResponse'
+        400:
+         description: bad request
+         content:
+           application/json:
+              schema:
+                  $ref: '#/components/schemas/badRequestInvalidId'
   /eliminartipo/{tipo}:
     delete: 
       tags:
@@ -144,6 +174,12 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/delereteFoodResponse'
+        400:
+         description: bad request
+         content:
+           application/json:
+              schema:
+                  $ref: '#/components/schemas/badRequestInvalidType'
 components:
   schemas:
     postFood:
@@ -192,6 +228,16 @@ components:
         foods: 
           items:
             $ref: '#/components/schemas/responseFood'
+    badRequestInvalidId: 
+      properties:
+        msg:
+          type: string
+          example: "El id es invalido"
+    badRequestInvalidType: 
+      properties:
+        msg:
+          type: string
+          example: "El tipe es invalido"
   parameters:
     id:
       name: id
