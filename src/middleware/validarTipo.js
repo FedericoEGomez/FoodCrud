@@ -1,8 +1,8 @@
 const {Foods} = require("../models/foods")
 const validarTipo = async (req, res, next) =>{
     try {
-        const team = await Foods.findOne({tipo: req.params.tipo});
-        if (team !== null) {
+        const food = await Foods.findOne({tipo: req.params.tipo});
+        if (food !== null) {
             next()
         } else {
            res.status(500).json({msg: "el tipo es invalido"}) 

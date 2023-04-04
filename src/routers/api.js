@@ -11,8 +11,8 @@ router.get('/ver/:id',apiController.verComidaPorId);
 router.get('/buscar/:tipo',apiController.buscarComida);
 router.post('/crear' ,checks ,validarCheck ,apiController.guardarComida);
 router.put('/editar/:id',validarID ,checks ,validarCheck ,apiController.editarLaComida);
-router.put('/editartipo/:tipo' ,checks ,validarCheck ,apiController.editarLaComidaPorTipo);
+router.put('/editartipo/:tipo',validarTipo ,checks ,validarCheck ,apiController.editarLaComidaPorTipo);
 router.delete('/eliminar/:id',validarID, apiController.eliminarComida);
-router.delete('/eliminartipo/:tipo' ,apiController.eliminarComidaPorTipo);
+router.delete('/eliminartipo/:tipo',validarTipo ,apiController.eliminarComidaPorTipo);
 
 module.exports = router;
