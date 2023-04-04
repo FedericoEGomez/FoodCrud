@@ -7,7 +7,7 @@ paths:
   /ver:
     get:
       tags:
-        - api ver listado
+        - api ver 
       description: Esta ruta trae el listado de todo los productos
       responses:
         200:
@@ -19,7 +19,7 @@ paths:
   /ver/{id}:
     get:
       tags:
-        - api ver listado
+        - api ver 
       description: Esta ruta trae el listado de todo los productos
       parameters:
         - $ref: '#/components/parameters/id'
@@ -33,7 +33,7 @@ paths:
   /buscar/{tipo}:
     get:
       tags:
-        - api ver listado
+        - api ver 
       description: Esta ruta trae el listado de todo los productos
       parameters:
         - $ref: '#/components/parameters/tipo'
