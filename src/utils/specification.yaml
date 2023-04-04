@@ -44,6 +44,22 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/responseListFood'
+  /buscador:
+    get:
+      tags:
+        - api ver 
+      description: Esta ruta trae el listado de todo los productos
+      parameters:
+        - $ref: '#/components/parameters/tipoQuery'
+        - $ref: '#/components/parameters/nombreQuery'
+        - $ref: '#/components/parameters/precioQuery'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/responseListFood'
   /crear:
     post: 
       tags:
@@ -191,3 +207,22 @@ components:
       required: true
       schema:
         type: string
+    tipoQuery:
+      name: tipo
+      in: query
+      description: Tipo del item en cuuestion
+      schema:
+        type: string
+    nombreQuery:
+      name: nombre
+      in: query
+      description: Tipo del item en cuuestion
+      schema:
+        type: string
+    precioQuery:
+      name: precio
+      in: query
+      description: Tipo del item en cuuestion
+      schema:
+        type: string
+

@@ -21,6 +21,12 @@ module.exports = {
         res.status(200).json({foods});
     },
 
+    async buscador (req, res) {
+        const foods = await Foods.find(req.query);
+        console.log(foods);
+        res.status(200).json({foods});
+    },
+
     async guardarComida(req, res) {
         try {
             const foods = new Foods(req.body);

@@ -9,6 +9,7 @@ const {validarCheck} = require('../middleware/validarChecks');
 router.get('/ver',apiController.verComidas);
 router.get('/ver/:id',apiController.verComidaPorId);
 router.get('/buscar/:tipo',apiController.buscarComida);
+router.get('/buscador',apiController.buscador);
 router.post('/crear' ,checks ,validarCheck ,apiController.guardarComida);
 router.put('/editar/:id',validarID ,checks ,validarCheck ,apiController.editarLaComida);
 router.put('/editartipo/:tipo',validarTipo ,checks ,validarCheck ,apiController.editarLaComidaPorTipo);
