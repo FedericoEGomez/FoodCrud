@@ -6,6 +6,7 @@ const options = {
         openapi : '3.0.1',
         info: {
             title: 'FoodCrud JS',
+            description: 'Esto es un ejemplo de como documentar Apis' ,
             version: '1.0.0'
         },
         servers: [
